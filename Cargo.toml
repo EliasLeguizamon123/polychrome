@@ -1,6 +1,6 @@
 [package]
 name = "polychrome"
-version = "0.1.0"
+version = "0.1.2"
 edition = "2021"
 license = "MIT/Apache-2.0"
 description = "Polychome is a color crate for rust"
@@ -9,6 +9,10 @@ repository = "https://github.com/EliasLeguizamon123/polychrome"
 keywords = ["color", "polychrome", "linux", "terminal"]
 readme = "README.md"
 authors = ["Elias Leguizamon <eliasleguizamon1997@gmail.com>"]
+
+[lib]
+name = "color"
+path = "src/lib.rs"
 
 [dependencies]
 rand = "0.8.5"
