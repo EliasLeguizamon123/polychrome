@@ -1,5 +1,5 @@
 [package]
-name = "colors"
+name = "polychrome"
 version = "2.0.0"
 edition = "2021"
 authors = ["Elias Leguizamon <elias.leguizamon1997@gmail.com>"]
