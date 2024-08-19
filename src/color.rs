@@ -1,7 +1,7 @@
 // lib.rs
 
 #[derive(Clone)]
-enum UnderlineStyle {
+pub enum UnderlineStyle {
     String(String),
     None,
 }
