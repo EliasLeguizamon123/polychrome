@@ -1,10 +1,12 @@
+// lib.rs
+
 #[derive(Clone)]
 enum UnderlineStyle {
     String(String),
     None,
 }
 
-struct ColorPrint<'a>(&'a str, Option<(u8, u8, u8)>, UnderlineStyle);
+pub struct ColorPrint<'a>(&'a str, Option<(u8, u8, u8)>, UnderlineStyle);
 
 impl<'a> std::fmt::Display for ColorPrint<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27,7 +29,7 @@ impl<'a> std::fmt::Display for ColorPrint<'a> {
     }
 }
 
-trait ColorPrintExt {
+pub trait ColorPrintExt {
     fn color<'a>(&'a self, r: u8, g: u8, b: u8) -> ColorPrint<'a>;
     fn underline<'a>(&'a self, style: Option<&str>) -> ColorPrint<'a>;
 }
@@ -61,9 +63,14 @@ impl<'a> ColorPrintExt for ColorPrint<'a> {
     }
 }
 
-fn main() {
-    println!("{}", "Hello, world!".color(255, 0, 0)); // Con color
-    println!("{}", "Hello, world!".underline(None)); // Subrayado sin color
-    println!("{}", "Hello, world!".color(0, 0, 255).underline(None)); // Con color y subrayado
-    println!("{}", "Hello, world!".color(0, 0, 255).underline(Some("stripe"))); // Con color y subrayado superior
+// Test usage
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_color_underline() {
+        println!("{}", "Hello, world!".color(255, 0, 0).underline(None)); // Con color y subrayado
+        println!("{}", "Hello, world!".color(0, 0, 255).underline(Some("stripe"))); // Con color y subrayado superior
+    }
 }

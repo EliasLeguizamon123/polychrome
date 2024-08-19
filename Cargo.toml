@@ -1,9 +1,10 @@
 [package]
 name = "colors"
-version = "0.1.0"
+version = "2.0.0"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+authors = ["Elias Leguizamon <elias.leguizamon1997@gmail.com>"]
+description = "A crate for printing colored and underlined text in the terminal."
+license = "MIT"
 
 [dependencies]
 rand = "0.8.5"
