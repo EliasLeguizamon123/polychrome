@@ -12,7 +12,7 @@ Just add to your `Cargo.toml`
 
 ```toml
 [dependencies]
-polychrome = "2.0.0"
+polychrome = "2.0.2"
 ```
 
 an then just use it! 
