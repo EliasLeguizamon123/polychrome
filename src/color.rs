@@ -1,14 +1,31 @@
 // lib.rs
-
+/// This enum represents the underline style of the text
+/// 
+/// # Variants
+/// - `String`: The underline style is a string (for now only 'stripe' is supported)
+/// - `None`: The underline style is none (normal underline)
 #[derive(Clone)]
 pub enum UnderlineStyle {
+    /// The underline style is a string (for now only 'stripe' is supported)
     String(String),
+    /// The underline style is none (normal underline)
     None,
 }
-
+/// A struct for color printing contains the text, color and underline style
 pub struct ColorPrint<'a>(&'a str, Option<(u8, u8, u8)>, UnderlineStyle);
 
 impl<'a> std::fmt::Display for ColorPrint<'a> {
+    /// Print the text with color and underline style
+    /// 
+    /// # Example
+    /// 
+    /// ```
+    /// use color_print::ColorPrintExt;
+    /// 
+    /// println!("{}", "Hello, world!".color(255, 0, 0).underline(None)); // Color and underline
+    /// println!("{}", "Hello, world!".color(0, 0, 255).underline(Some("stripe"))); // Color and striped 
+    /// ```
+
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let color_code = match self.1 {
             Some((r, g, b)) => format!("\x1b[38;2;{};{};{}m", r, g, b),
@@ -30,7 +47,35 @@ impl<'a> std::fmt::Display for ColorPrint<'a> {
 }
 
 pub trait ColorPrintExt {
+    /// Set the color of the text
+    /// 
+    /// # Params
+    /// - `r`: Red color value
+    /// - `g`: Green color value
+    /// - `b`: Blue color value
+    /// 
+    /// # Example
+    /// 
+    /// ```
+    /// use color_print::ColorPrintExt;
+    /// 
+    /// println!("{}", "Hello, world!".color(255, 0, 0)); // Red color
+    /// ```
+    /// 
     fn color<'a>(&'a self, r: u8, g: u8, b: u8) -> ColorPrint<'a>;
+    /// Set the underline style of the text
+    /// 
+    /// # Params
+    /// - `style`: The underline style, can be `None`, `stripe`
+    /// 
+    /// # Example
+    /// 
+    /// ```
+    /// use color_print::ColorPrintExt;
+    /// 
+    /// println!("{}", "Hello, world!".underline(None)); // Normal underline
+    /// println!("{}", "Hello, world!".underline(Some("stripe"))); // Striped underline
+    /// ```
     fn underline<'a>(&'a self, style: Option<&str>) -> ColorPrint<'a>;
 }
 

@@ -4,6 +4,7 @@ version = "2.0.2"
 edition = "2021"
 authors = ["Elias Leguizamon <elias.leguizamon1997@gmail.com>"]
 description = "A crate for printing colored and underlined text in the terminal."
+documentation = "https://docs.rs/polychrome/latest/polychrome/"
 license = "MIT"
 
 [dependencies]
