@@ -1,6 +1,6 @@
 [package]
 name = "polychrome"
-version = "2.0.3"
+version = "3.0.0"
 edition = "2021"
 authors = ["Elias Leguizamon <elias.leguizamon1997@gmail.com>"]
 description = "A crate for printing colored and underlined text in the terminal."
