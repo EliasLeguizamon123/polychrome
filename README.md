@@ -26,7 +26,7 @@
 - 🎨 **Background Colors**: Style text with colorful backgrounds
 - **📝 Text Styling**: Bold, italic, dim, blink, and more
 - 🌊 **Gradient Effects**: Create beautiful color transitions
-- 🌈 **Rainbow Text**: Automatic rainbow coloring
+- 🌈 **Polychrome Text**: Automatic polychrome coloring
 - 📊 **Progress Bars**: Built-in customizable progress indicators
 - 🖥️ **Terminal Utils**: Cursor control, screen clearing, and more
 - 🚀 **Zero Dependencies**: Lightweight and fast
@@ -94,9 +94,9 @@ use polychrome::{StyledText, colors};
 let gradient = StyledText::gradient("GRADIENT TEXT", colors::RED, colors::BLUE);
 println!("{}", gradient);
 
-// Rainbow effect
-let rainbow = StyledText::rainbow("🌈 RAINBOW TEXT 🌈");
-println!("{}", rainbow);
+// Polychrome effect
+let polychrome = StyledText::polychrome("🌈 POLYCHROME TEXT 🌈");
+println!("{}", polychrome);
 ```
 
 ### Progress Bars
